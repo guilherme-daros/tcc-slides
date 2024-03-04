@@ -1,0 +1,150 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GENERAL SETTINGS AND MACROS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\AtBeginSection[]{
+\begin{frame}[plain]
+\begin{center}\Huge\textbf{\insertsection}\end{center}
+\end{frame}
+}
+
+\setbeamertemplate{frametitle continuation}[from second]
+
+%\setbeamercovered{transparent = 28}
+
+\definecolor{myblue}{rgb}{0,0,1}
+
+%\definecolor{bluesoft}{rgb}{0.85,0.88,1}
+%\definecolor{bluestrong}{rgb}{0,0.35,0.75}
+%\definecolor{blue}{rgb}{0.05,0.15,1}
+
+%\definecolor{bluesoft}{rgb}{0.81,0.88,1}
+%\definecolor{bluesoft}{rgb}{0.76,0.83,1}
+%\definecolor{bluesoft}{rgb}{0.8,0.85,1}
+\definecolor{bluesoft}{rgb}{0.85,0.89,1}
+\definecolor{bluestrong}{rgb}{0,0.27,0.72}
+%\definecolor{bluestrong}{rgb}{0,0.1,0.85}=igual ao blue
+%\definecolor{blue}{rgb}{0.05,0.15,1}
+\definecolor{blue}{rgb}{0,0.1,0.85}
+
+%\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+%\newcommand{\bluebf}[1]{\textcolor{blue}{\bf#1}}
+%\newcommand{\red}[1]{\textcolor{red}{#1}}
+%\newcommand{\redbf}[1]{\textcolor{red}{\bf#1}}
+%\newcommand{\green}[1]{\textcolor{darkgreen}{#1}}
+%\newcommand{\greenbf}[1]{\textcolor{darkgreen}{\bf#1}}
+%\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+%\newcommand{\graybf}[1]{\textcolor{gray}{\bf#1}}
+
+
+
+%%%%%%%%%%%%%%%
+% COLOR THEME %
+%%%%%%%%%%%%%%%
+
+% \documentclass[x?olor = dvipsnames]{beamer}
+% rgb: from 0 to 1
+% RGB: from 0 to 255
+
+\definecolor{darkgreen}{RGB}{0, 128, 0}
+
+% Titles
+\setbeamercolor{frametitle}{fg = blue, bg =}
+\setbeamercolor{title}{parent=block title}
+
+% Table of contents
+\setbeamercolor{section in toc}{fg = Ftitle}
+\setbeamercolor{section in toc shaded}{fg = Ftitle}
+
+% item = itemize item, enumerate item, description item
+\setbeamercolor{item}{fg = blue}
+\setbeamercolor{subitem}{fg = blue}
+\setbeamercolor{subsubitem}{fg = blue}
+
+% Captions
+\setbeamercolor{caption}{fg = blue}
+\setbeamercolor{caption name}{fg = blue}
+
+% Background
+%\setbeamercolor{background canvas}{bg = white}
+
+% Standard block
+%\setbeamercolor{block title}{fg = black, bg = blue!24!white}
+\setbeamercolor{block title}{fg = white, bg = bluestrong} % TESTING
+\setbeamercolor{block body}{fg = black, bg = bluesoft} %TESTING
+%\setbeamercolor{block title}{fg = white, bg = blue!60!black} % ORIGINALDANILO
+%\setbeamercolor{block body}{fg = black, bg = blue!12!white} %ORIGINAL DANILO
+
+% Example block
+%\setbeamercolor{block title example}{fg = black, bg = darkgreen!30!white}
+\setbeamercolor{block title example}{fg = white, bg = darkgreen!80!black}
+\setbeamercolor{block body example}{fg = black, bg = darkgreen!16!white}
+
+% Alert block
+%\setbeamercolor{block title alerted}{fg = black, bg = red!26!white}
+\setbeamercolor{block title alerted}{fg = white, bg = red!60!black}
+\setbeamercolor{block body alerted}{fg = black, bg = red!13!white}
+
+% Text
+\setbeamercolor{normal text}{fg = black}
+
+
+
+%%%%%%%%%%%%%%
+% FONT THEME %
+%%%%%%%%%%%%%%
+
+% Font style
+\usefonttheme[onlymath]{serif}
+\usepackage[scaled=0.92]{helvet}
+\DeclareMathAlphabet{\mathsf}{OT1}{phv}{m}{n}
+\SetMathAlphabet{\mathsf}{bold}{OT1}{phv}{bx}{n}
+
+% Font for title page
+\setbeamerfont{title}{series=\bfseries, size=\LARGE,parent=structure}
+\setbeamerfont{author}{series=\bfseries, size=\large}
+\setbeamerfont{institute}{series=, size=\small}
+\setbeamerfont{date}{series=, size=\small}
+
+% Font of the frame titles
+\setbeamerfont{frametitle}{size = \Large}
+
+
+
+%%%%%%%%%%%%%%%
+% INNER THEME %
+%%%%%%%%%%%%%%%
+
+%\useinnertheme[shadow=true]{rounded}
+\useinnertheme{default}
+
+%\setbeamertemplate{itemize items}[circle] %triangle
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{description item}{\insertdescriptionitem}
+
+
+
+%%%%%%%%%%%%%%%
+% OUTER THEME %
+%%%%%%%%%%%%%%%
+
+% Define presentation end frame (last frame before appendix)
+\def\insertpresentationendframe{\inserttotalframenumber}
+\makeatletter
+\g@addto@macro{\appendix}{\immediate\write\@auxout{\string\@writefile{nav}{\noexpand\headcommand{\noexpand\def\noexpand\insertpresentationendframe{\the\c@framenumber}}}}}
+\makeatother
+
+% Headline with horizontal line
+%\setbeamertemplate{headline}{\raisebox{-9mm}[0pt][0pt] {\hspace{0.025\paperwidth}\color{blue}\rule{0.95\paperwidth}{0.5pt}}}
+
+% Footline
+\setbeamertemplate{footline}{%    % ht=2.25ex
+ \begin{beamercolorbox}[wd=\paperwidth,ht=1.5ex,dp=1ex]{normal text} %\tiny\hspace*{2mm} \insertshorttitle \hfill \insertsection
+%\hfill ESTE MATERIAL NÃO DEVE SER USADO COMO ÚNICA FONTE DE APRENDIZADO DO ESTUDANTE
+\hfill \insertframenumber\,/\,\insertpresentationendframe \hspace{2mm} \end{beamercolorbox}}
+
+% Navigation symbols
+\setbeamertemplate{navigation symbols}{}
