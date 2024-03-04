@@ -8,4 +8,4 @@ O trabalho, sob o título *"Uma Análise da Eficiência Energética do Processam
 
 #### Links Úteis
 - [Código](google.com).  
-- [Slides](google.com).
+- [Texto](google.com).
