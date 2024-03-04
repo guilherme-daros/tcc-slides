@@ -8,4 +8,4 @@ O trabalho, sob o título *"Uma Análise da Eficiência Energética do Processam
 
 #### Links Úteis
 - [Código](https://github.com/guilherme-daros/tcc-dev) 
-- [Texto](https://github.com/guilherme-daros/tcc-texto).
+- [Texto](https://github.com/guilherme-daros/tcc-texto)
